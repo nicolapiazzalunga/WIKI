@@ -1,0 +1,20 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia - {{ entry_name }}
+{% endblock %}
+
+{% block body %}
+
+    {% if entry_missing %}
+
+        <div><h1>Missing Entry!</h1></div>
+
+    {% else %}
+
+        <div><a href="edit-{{ entry_name }}">Edit Page</a></div>
+        <div>{{ entry_text | safe }}</div>
+        
+    {% endif %}
+
+{% endblock %}
